@@ -1,0 +1,2 @@
+#!/bin/bash
+cleos -u https://testnet.wax.pink.gg set code newusr.waxtn build/wcwwallettestnet/wcwwallettestnet.wasm; cleos -u https://testnet.wax.pink.gg set abi newusr.waxtn build/wcwwallettestnet/wcwwallettestnet.abi

@@ -1,0 +1,7 @@
+//set eosio.code@active
+cleos -u https://testnet.wax.pink.gg set account permission newusr.waxtn active --add-code
+cleos -u https://testnet.wax.pink.gg system buyram waxtn newusr.waxtn "100 WAX" -p waxtn@active
+
+cleos -u https://testnet.wax.pink.gg push action newusr.waxtn init '[]' -p newusr.waxtn
+cleos -u https://testnet.wax.pink.gg push action newusr.waxtn setwalletkey '["EOS6UBMKMuuZLeB3HGkJ5FnKATERHFF49rK5FySTxcV6QoL4zLNcr"]' -p newusr.waxtn
+cleos -u https://testnet.wax.pink.gg push action newusr.waxtn regaccount '["...wamtn"]' -p newusr.waxtn

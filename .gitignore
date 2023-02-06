@@ -1,0 +1,8 @@
+*.abi
+*.wasm
+.eosproj
+.DS_STORE
+
+.idea
+build/*
+!build/build_here.txt

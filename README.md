@@ -1,2 +1,2 @@
-# wcw-wallet-testnet-sc
-Smart contract to control WAX Cloud Wallet testnet
+# WAX Cloud Wallet Testnet Smart Contract
+Smart contract that control WAX Cloud Wallet testnet registration
