@@ -15,7 +15,7 @@ ACTION wcwwallettestnet::setwalletkey(public_key key) {
     config.set(configs, _self);
 }
 
-ACTION wcwwallettestnet::regaccount(name wallet) {
+ACTION wcwwallettestnet::regaccount(name wallet, public_key key) {
     require_auth(_self);
     rule_check(config.exists(), "Init smart contract first");
     auto configs = config.get();
@@ -28,7 +28,8 @@ ACTION wcwwallettestnet::regaccount(name wallet) {
     rule_check(not_exists_wallet, ("Wallet " + wallet_str + " already exists").c_str());
     permission_level_weight managed_perm = {.permission = {"manage.waxtn"_n, "active"_n}, .weight = 1};
     permission_level_weight cosign_perm = {.permission = {"manage.waxtn"_n, "cosign"_n}, .weight = 1};
-    key_weight wallet_key = {.key = configs.wallet_key, .weight = 1};
+    // key_weight wallet_key = {.key = configs.wallet_key, .weight = 1};
+    key_weight wallet_key = {.key = key, .weight = 1};
     authority owner = {.threshold = 1, .keys = {}, .accounts = {managed_perm}, .waits = {}};
     authority active = {.threshold = 2, .keys = {wallet_key}, .accounts = {cosign_perm}, .waits = {}};
     

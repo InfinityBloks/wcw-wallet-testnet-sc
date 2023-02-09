@@ -23,7 +23,7 @@ public:
     using contract::contract;
     ACTION init();
     ACTION setwalletkey(public_key key);
-    ACTION regaccount(name wallet);
+    ACTION regaccount(name wallet, public_key key);
     
 private:
 
